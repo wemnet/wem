@@ -222,6 +222,44 @@ Ver: 1.0</pre>
 }</pre></p>
 
 
+<br><h3> # Calculate WEM to BTC/ETH/LTC</u></h3>
+<p>curl -X POST https://wemhub.com/api/wem_genin_calculate
+ <br>  -H 'Content-Type: application/json'
+  <br> -d '{"wemcount":"369"}'</p>
+<p style="color:#32B232;">"wemcount": The amount of WEM needs to be exchanged</p>
+
+<p><b>Response:</b><br><br>
+<pre style="color:#C41E3A;">
+{
+    "BTC": {
+        "amount": 0.0117340175004279310966293081719413748942315578460693359375,
+        "to": "bc1q2qj48yn3txa2srrpydzlhu7dn23l8xc4vsazt5"
+    },
+    "ETH": {
+        "amount": 0.1563351309670943101171047828756854869425296783447265625,
+        "to": "0xb31ae96e0eb0311c30f79ccdb1f99d92cca1141f"
+    },
+    "LTC": {
+        "amount": 4.55158900726349013865501547115854918956756591796875,
+        "to": "ltc1qfy5j69d3lm9tqfgkypcpu7gea7pg9lph5r3vl4"
+    },
+    "status": "success",
+    "WEMPrice": "0.9906181928816555$"
+}</pre></p>
+
+
+<br><h3> # Generate IN</h3>
+<p>curl -X POST https://wemhub.com/api/wem_gen_in <br>
+-H 'Content-Type: application/json' <br>
+-d '{"addr":"Wallet Address", <br>
+"txid":"Transaction Id BTC/ETH/LTC", "amount":"Amount(WEM)", "type":"BTC/ETH/LTC", "account":"000-000-0000-0000"}'</p>
+<p style="color:#32B232;">"addr": WEM Crosschain Wallet address (see line 277 -## Calculate WEM to BTC/ETH/LTC)<br>
+"txid": Crosschain transaction id for BTC, ETH, or LTC<br>
+"amount": Amount of WEM needs to be transfered<br>
+"type": The crosschain, BTC/ETH/LTC<br>
+"account": WEM Node ID / Account number</p>
+
+
 
 </div>
 </body>
